@@ -29,7 +29,7 @@
 *.blinkmind
 *.note.GNU-stack
 *.code-workspace
-old/*
+# old/*
 tmp/*
 main/*
 temp/*
