@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-void free_array(char **arr)
+void free_array(int **arr)
 {
     int i = 0;
 

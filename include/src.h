@@ -6,20 +6,20 @@
 */
 
 #ifndef SRC_H_
-    #define SRC_H_
+#define SRC_H_
 
 void disp_is_o_s(void);
 void disp_nb_err(void);
 void disp_is_dots(void);
 void disp_float_err(void);
 void disp_empty_file(void);
-void free_array(char **arr);
+void free_array(int **arr);
 void disp_unknown_err(void);
 void disp_broken_file(void);
 void disp_illegal_chars(void);
 void disp_to_little_args(void);
 void disp_unsigned_nb_err(void);
-void hl_put_int_array(int **arr);
+void hl_put_int_array(int **arr, char *name);
 void disp_without_nb(char *file_content);
 void hl_putbool(int bool_val, char *name);
 
