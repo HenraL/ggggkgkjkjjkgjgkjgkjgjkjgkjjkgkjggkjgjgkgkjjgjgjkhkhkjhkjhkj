@@ -23,6 +23,7 @@ SRC	=	$(CODE_ACCESS_FOLDER)sub_main.c	\
 		$(CODE_ACCESS_FOLDER)fill_struct.c	\
 		$(CODE_ACCESS_FOLDER)search_square.c	\
 		$(CODE_ACCESS_FOLDER)skip_first_line.c	\
+		$(CODE_ACCESS_FOLDER)hl_put_int_array.c	\
 		$(CODE_ACCESS_FOLDER)init_biggest_square.c	\
 		$(CODE_ACCESS_FOLDER)hl_str_to_int_array.c	\
 		$(CODE_ACCESS_FOLDER)hl_str_to_word_array.c	\
@@ -40,7 +41,6 @@ HAS_SRC	=	$(HAS_CODE_ACCESS_FOLDER)has_illegal_chars.c	\
 
 IS_SRC	=	$(IS_CODE_ACCESS_FOLDER)is_a_float.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_solvable.c	\
-			$(IS_CODE_ACCESS_FOLDER)is_findable.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_only_o_s.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_a_number.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_different.c	\

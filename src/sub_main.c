@@ -24,7 +24,7 @@ static int process_array(char *file_content)
     arr = search_square(arr);
     hl_put_int_array(arr, "(sm) arr");
     hl_put_struct_content(bst, "(sm) bst");
-    disp_square(bst, arr);
+    // disp_square(bst, arr);
     free_array(arr);
     return success;
 }

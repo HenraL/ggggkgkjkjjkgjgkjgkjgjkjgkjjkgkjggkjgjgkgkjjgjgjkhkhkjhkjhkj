@@ -22,6 +22,7 @@ int find_smallest(int left, int top, int top_left, int c_int)
     if ((left > top) && (top_left > top)) {
         return top;
     }
+    return c_int;
 }
 
 int **search_square(int **arr)
