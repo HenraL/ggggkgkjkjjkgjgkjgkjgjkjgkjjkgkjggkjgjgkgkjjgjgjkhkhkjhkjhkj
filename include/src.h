@@ -36,7 +36,6 @@ int skip_first_line(char *file_content, int skip_line_one);
 int is_correct_size(int const x, int const y, int size, char **tab);
 int has_illegal_chars(char *str, char *authed_chars, int skip_first_line);
 
-int **search_square(int **arr);
 int **hl_str_to_int_array(char *str, int *total_width, int *total_height);
 
 char *get_file_content(char *filename, int *nb_read_bytes, int *status);

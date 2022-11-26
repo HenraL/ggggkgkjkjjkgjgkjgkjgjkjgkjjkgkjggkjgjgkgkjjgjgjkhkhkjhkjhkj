@@ -28,6 +28,8 @@ SRC	=	$(CODE_ACCESS_FOLDER)sub_main.c	\
 		$(CODE_ACCESS_FOLDER)hl_str_to_int_array.c	\
 		$(CODE_ACCESS_FOLDER)hl_str_to_word_array.c	\
 		$(CODE_ACCESS_FOLDER)hl_put_struct_content.c	\
+		$(CODE_ACCESS_FOLDER)hl_put_new_struct_content.c	\
+		$(CODE_ACCESS_FOLDER)init_new_biggest_square.c	\
 
 
 FILE_SRC	=	$(FILE_CODE_ACCESS_FOLDER)file_close.c	\

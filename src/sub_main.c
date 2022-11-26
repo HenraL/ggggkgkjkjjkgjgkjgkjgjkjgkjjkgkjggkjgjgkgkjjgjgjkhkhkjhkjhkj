@@ -19,11 +19,13 @@ static int process_array(char *file_content)
     int width = 0;
     int height = 0;
     int **arr;
-    biggest_square_t bst = init_biggest_square(0);
+    new_biggest_square_t bst = init_new_bigest_square(0);
     arr = hl_str_to_int_array(file_content, &width, &height);
-    arr = search_square(arr);
-    hl_put_int_array(arr, "(sm) arr");
-    hl_put_struct_content(bst, "(sm) bst");
+    hl_put_int_array(arr, "(sm) raw_arr");
+    bst = search_square(arr);
+    hl_put_new_struct_content(bst, "new_bst");
+    // hl_put_int_array(arr, "(sm) processed_arr");
+    // hl_put_struct_content(bst, "(sm) bst");
     // disp_square(bst, arr);
     free_array(arr);
     return success;

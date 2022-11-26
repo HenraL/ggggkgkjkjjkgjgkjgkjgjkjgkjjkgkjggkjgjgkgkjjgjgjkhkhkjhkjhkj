@@ -67,7 +67,6 @@ int **hl_str_to_int_array(char *str, int *total_width, int *total_height)
     int line_length = get_line_length(str, 0);
     int **dest = malloc(sizeof(int *) * (get_height(str) + 1));
     dest[0] = malloc(sizeof(int) * (line_length + 1));
-
     for (; str[i] != '\0'; i++) {
         if (is_legal(str[i]) == false) {
             dest[y][x] = (-1);

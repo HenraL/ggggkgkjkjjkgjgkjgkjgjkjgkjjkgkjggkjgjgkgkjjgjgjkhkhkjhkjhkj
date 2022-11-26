@@ -9,17 +9,19 @@
 #include "my.h"
 #include "hl_struct.h"
 
-static void who_to_display(biggest_square_t bst, char **tab, int x, int y)
-{
-    int size = bst.size;
-    int o_x = size + bst.t_left_x;
-    int o_y = size + bst.t_left_y;
-    if ((y >= bst.t_left_y && y <= o_y) && (x >= bst.t_left_x && x <= o_x)) {
-        my_putchar('x');
-    } else {
-        my_putchar(tab[y][x]);
-    }
-}
+// static void who_to_display(biggest_square_t bst, char **tab, int x, int y)
+// {
+//     int size = bst.size;
+//     int o_x = size + bst.t_left_x;
+//     int o_y = size + bst.t_left_y;
+//     if ((y >= bst.t_left_y && y <= o_y) && (x >= bst.t_left_x && x <= o_x)) {
+//         my_putchar('x');
+//     } else {
+//         my_putchar(tab[y][x]);
+//     }
+// }
+
+static void dis_arr()
 
 void disp_square(biggest_square_t bst, char **tab)
 {

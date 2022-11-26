@@ -6,7 +6,7 @@
 */
 
 #ifndef HL_STRUCT_H_
-    #define HL_STRUCT_H_
+#define HL_STRUCT_H_
 
 typedef struct new_biggest_square_s {
     int y_pos_start;
@@ -16,7 +16,6 @@ typedef struct new_biggest_square_s {
     int size;
 } new_biggest_square_t;
 
-
 typedef struct biggest_square_s {
     int t_left_x;
     int t_left_y;
@@ -25,8 +24,12 @@ typedef struct biggest_square_s {
 
 void disp_square(biggest_square_t bst, char **tab);
 void hl_put_struct_content(biggest_square_t bst, char *name);
+void hl_put_new_struct_content(new_biggest_square_t bst, char *name);
 
 int is_different(biggest_square_t cst, biggest_square_t pst);
+
+new_biggest_square_t search_square(int **arr);
+new_biggest_square_t init_new_bigest_square(int nb);
 
 biggest_square_t init_biggest_square(int nb);
 biggest_square_t find_biggest(int size, char **tab, int w, int h);
