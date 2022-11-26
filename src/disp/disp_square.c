@@ -9,29 +9,35 @@
 #include "my.h"
 #include "hl_struct.h"
 
-// static void who_to_display(biggest_square_t bst, char **tab, int x, int y)
-// {
-//     int size = bst.size;
-//     int o_x = size + bst.t_left_x;
-//     int o_y = size + bst.t_left_y;
-//     if ((y >= bst.t_left_y && y <= o_y) && (x >= bst.t_left_x && x <= o_x)) {
-//         my_putchar('x');
-//     } else {
-//         my_putchar(tab[y][x]);
-//     }
-// }
+static void disp_arr(new_biggest_square_t nbs, char *str, int x, int y)
+{
+    if (y >= nbs.y_pos_start && y <= nbs.y_pos_end) {
+        if (x >= nbs.x_pos_start && x <= nbs.x_pos_end) {
+            my_putchar('x');
+        } else {
+            my_putchar(str[x]);
+        }
+    } else {
+        my_putchar(str[x]);
+    }
+}
 
-static void dis_arr()
-
-void disp_square(biggest_square_t bst, char **tab)
+void disp_square(new_biggest_square_t nbs, char *file_content)
 {
     int y = 1;
     int x = 0;
 
-    for (; tab[y] != NULL; y++) {
-        for (x = 0; tab[y][x] != '\0'; x++) {
-            who_to_display(bst, tab, x, y);
-        }
-        my_putchar('\n');
+    for (; file_content[x] != '\n'; x++) {
+        continue;
     }
+
+    x += 1;
+
+    for (; file_content[x] != '\0'; x++) {
+        if (file_content[x] == '\n') {
+            y++;
+        }
+        disp_arr(nbs, file_content, x, y);
+    }
+
 }

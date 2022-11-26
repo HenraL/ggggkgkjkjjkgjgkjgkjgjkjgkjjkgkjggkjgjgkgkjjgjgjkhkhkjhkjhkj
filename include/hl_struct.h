@@ -22,7 +22,7 @@ typedef struct biggest_square_s {
     int size;
 } biggest_square_t;
 
-void disp_square(biggest_square_t bst, char **tab);
+void disp_square(new_biggest_square_t nbs, char *file_content);
 void hl_put_struct_content(biggest_square_t bst, char *name);
 void hl_put_new_struct_content(new_biggest_square_t bst, char *name);
 
