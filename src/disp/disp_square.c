@@ -39,9 +39,7 @@ void disp_square(new_biggest_square_t nbs, char *file_content)
             y += 1;
             x = 0;
         }
-
         disp_arr(nbs, file_content[i], x, y);
-
         if (file_content[i] != '\n') {
             x += 1;
         }

@@ -10,40 +10,35 @@
 #include "my.h"
 #include "hl_struct.h"
 
-int **find_smallest(int **arr, int y, int x, new_biggest_square_t *nbs)
+static void update_structure(new_biggest_square_t *nbs, int **arr, int x, int y)
+{
+    if (arr[y][x] > nbs->size) {
+        nbs->size = arr[y][x];
+        nbs->x_pos_end = x;
+        nbs->y_pos_end = y;
+    }
+}
+
+static int **find_smallest(int **arr, int y, int x, new_biggest_square_t *nbs)
 {
     int top = arr[y - 1][x];
     int left = arr[y][x - 1];
     int top_left = arr[y - 1][x - 1];
-
-    if (top_left == 0) {
+    if (top_left == 0)
         return arr;
-    }
     if ((left >= top_left) && (top >= top_left)) {
         arr[y][x] += top_left;
-        if (arr[y][x] > nbs->size) {
-            nbs->size = arr[y][x];
-            nbs->x_pos_end = x;
-            nbs->y_pos_end = y;
-        }
+        update_structure(nbs, arr, x, y);
         return arr;
     }
     if ((top_left >= left) && (top >= left)) {
         arr[y][x] += left;
-        if (arr[y][x] > nbs->size) {
-            nbs->size = arr[y][x];
-            nbs->x_pos_end = x;
-            nbs->y_pos_end = y;
-        }
+        update_structure(nbs, arr, x, y);
         return arr;
     }
     if ((left >= top) && (top_left >= top)) {
         arr[y][x] += top;
-        if (arr[y][x] > nbs->size) {
-            nbs->size = arr[y][x];
-            nbs->x_pos_end = x;
-            nbs->y_pos_end = y;
-        }
+        update_structure(nbs, arr, x, y);
         return arr;
     }
     return arr;

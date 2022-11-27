@@ -51,15 +51,9 @@ static int check_pattern(char **argv, err_struct_t *es)
     int height = 0;
     int overflow = 2;
     int i = 2;
-
-    if (is_legal(argv[2], ".o\0") == false) {
-        return display_correct_err_msg(illegal_chars, es);
-    }
-
     width = hl_atoi(argv[1]);
     height = width;
     generated_map = malloc(sizeof(char) * (((height * width) + overflow) + 1));
-
     if (generated_map == NULL) {
         return display_correct_err_msg(allocation_failed, es);
     }
@@ -70,7 +64,6 @@ static int check_pattern(char **argv, err_struct_t *es)
     free(generated_map);
     return success;
 }
-
 // process_array(generated_map);
 
 int generate_map(char **argv, err_struct_t *es)
@@ -83,6 +76,9 @@ int generate_map(char **argv, err_struct_t *es)
     }
     if (is_a_float(argv[1]) == true) {
         return display_correct_err_msg(is_a_float_err, es);
+    }
+    if (is_legal(argv[2], ".o\0") == false) {
+        return display_correct_err_msg(illegal_chars, es);
     }
     return check_pattern(argv, es);
 }
