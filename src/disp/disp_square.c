@@ -6,6 +6,7 @@
 */
 
 #include <stddef.h>
+#include <stdbool.h>
 #include "my.h"
 #include "hl_struct.h"
 
@@ -22,26 +23,24 @@ static void disp_arr(new_biggest_square_t nbs, char chr, int x, int y)
     }
 }
 
-void disp_square(new_biggest_square_t nbs, char *file_content)
+void disp_square(new_biggest_square_t nbs, char *file_content, int skip_line1)
 {
-    int y = 1;
+    int y = 0;
     int x = 0;
     int i = 0;
 
-    for (; file_content[i] != '\n'; i++) {
-        continue;
+    if (skip_line1 == true) {
+        for (; file_content[i] != '\n'; i++) {
+            continue;
+        }
+        i += 1;
+        y++;
     }
-
-    i += 1;
-
-    for (; file_content[i] != '\0'; i++) {
+    for (; file_content[i] != '\0'; i++, x++) {
         if (file_content[i] == '\n') {
             y += 1;
-            x = 0;
+            x = (-1);
         }
         disp_arr(nbs, file_content[i], x, y);
-        if (file_content[i] != '\n') {
-            x += 1;
-        }
     }
 }

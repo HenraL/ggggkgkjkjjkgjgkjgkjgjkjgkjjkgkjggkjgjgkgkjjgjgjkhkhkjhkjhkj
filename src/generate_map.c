@@ -10,8 +10,20 @@
 #include "my.h"
 #include "src.h"
 #include "constants.h"
+#include "hl_struct.h"
 #include "err_struct.h"
 #include "error_constants.h"
+
+static void find_and_show_square(array_t *arr)
+{
+    new_biggest_square_t bst = init_new_bigest_square(0);
+    bst = search_square(arr->int_arr);
+    disp_square(bst, arr->string, false);
+    my_putstr("going_to_free\n");
+    free_array(arr->int_arr);
+    free(arr->string);
+    free(arr);
+}
 
 static int reset_pattern_tracker(int tracker, char *pattern)
 {
@@ -21,47 +33,55 @@ static int reset_pattern_tracker(int tracker, char *pattern)
     return tracker;
 }
 
-static char *fill_the_map(char *result, char *pattern, int width, int height)
+static array_t *fill_the_map(array_t *arr, char *pattern, int width, int height)
 {
     int y = 0;
     int x = 0;
     int result_tracker = 2;
     int pattern_tracker = 0;
 
-    result[0] = '0';
-    result[1] = '\n';
     for (; y < height; y++) {
+        arr->int_arr[y] = malloc(sizeof(int) * width + 1);
         for (x = 0; x < width; x++) {
             pattern_tracker = reset_pattern_tracker(pattern_tracker, pattern);
-            result[result_tracker] = pattern[pattern_tracker];
+            arr->string[result_tracker++] = pattern[pattern_tracker];
+            arr->int_arr[y][x] = whois(pattern[pattern_tracker]);
             pattern_tracker++;
-            result_tracker += 1;
         }
-        result[result_tracker] = '\n';
-        result_tracker += 1;
+        arr->string[result_tracker++] = '\n';
+        arr->int_arr[y][x] = (-1);
     }
-    result[result_tracker] = '\0';
-    return result;
+    arr->string[result_tracker] = '\0';
+    my_putstr("arr->string = ");
+    my_putstr(arr->string);
+    my_putchar('\n');
+    my_putstr("Pattern = '");
+    my_putstr(pattern);
+    my_putstr("'\n");
+    arr->int_arr[y] = NULL;
+    return arr;
 }
 
 static int check_pattern(char **argv, err_struct_t *es)
 {
-    char *generated_map;
-    int width = 0;
-    int height = 0;
-    int overflow = 2;
-    int i = 2;
-    width = hl_atoi(argv[1]);
-    height = width;
-    generated_map = malloc(sizeof(char) * (((height * width) + overflow) + 1));
-    if (generated_map == NULL) {
+    array_t *arr;
+    int width = hl_atoi(argv[1]);
+    int height = width;
+    my_putstr("vars loaded\nwidth = '");
+    my_put_nbr(width);
+    my_putstr("'\n");
+    arr = init_arrays_struct(width, height);
+    my_putstr("Struct initialised\n");
+    if (arr->string == NULL || arr->int_arr == NULL) {
         return display_correct_err_msg(allocation_failed, es);
     }
-    generated_map = fill_the_map(generated_map, argv[2], width, height);
-    for (; generated_map[i] != '\0'; i++) {
-        my_putchar(generated_map[i]);
+    arr = fill_the_map(arr, argv[2], width, height);
+    my_putstr("Map filled\n");
+    for (int i = 0; arr->string[i] != '\0'; i++) {
+        my_putchar(arr->string[i]);
     }
-    free(generated_map);
+    find_and_show_square(arr);
+
     return success;
 }
 

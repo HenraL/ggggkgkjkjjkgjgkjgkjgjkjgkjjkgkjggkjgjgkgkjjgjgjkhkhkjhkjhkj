@@ -24,6 +24,7 @@ void hl_put_int_array(int **arr, char *name);
 void disp_without_nb(char *file_content);
 void hl_putbool(int bool_val, char *name);
 
+int whois(char c);
 int hl_atoi(char *nb);
 int file_open(char *filename);
 int is_a_float(char *file_content);
