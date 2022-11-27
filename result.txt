@@ -1,0 +1,17 @@
+(sm) raw_arr = 
+53
+10111
+10111
+10111
+10111
+10111
+new_bst.x_pos_end = '4'
+new_bst.y_pos_end  = '3'
+new_bst.size = '3'
+new_bst.x_pos_start  = '2'
+new_bst.y_pos_start  = '1'
+.oxxx
+.oxxx
+.oxxx
+.o...
+.o...
