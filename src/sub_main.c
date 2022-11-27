@@ -21,9 +21,8 @@ static int process_array(char *file_content)
     int **arr;
     new_biggest_square_t bst = init_new_bigest_square(0);
     arr = hl_str_to_int_array(file_content, &width, &height);
-    hl_put_int_array(arr, "(sm) raw_arr");
     bst = search_square(arr);
-    hl_put_new_struct_content(bst, "new_bst");
+    hl_put_new_struct_content(bst, "(sm) raw_struct_content");
     disp_square(bst, file_content);
     free_array(arr);
     return success;
