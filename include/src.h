@@ -6,7 +6,7 @@
 */
 
 #ifndef SRC_H_
-#define SRC_H_
+    #define SRC_H_
 
 void disp_is_o_s(void);
 void disp_nb_err(void);

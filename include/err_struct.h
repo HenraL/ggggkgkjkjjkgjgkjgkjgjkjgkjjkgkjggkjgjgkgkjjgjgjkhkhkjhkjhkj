@@ -6,7 +6,7 @@
 */
 
 #ifndef ERR_STRUCT_H_
-#define ERR_STRUCT_H_
+    #define ERR_STRUCT_H_
 
 typedef struct err_struct_s {
     int err_id;

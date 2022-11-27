@@ -6,7 +6,7 @@
 */
 
 #ifndef ERROR_CONSTANTS_H_
-#define ERROR_CONSTANTS_H_
+    #define ERROR_CONSTANTS_H_
 
 static const int nb_known_errs = 12;
 

@@ -6,7 +6,7 @@
 */
 
 #ifndef HL_STRUCT_H_
-#define HL_STRUCT_H_
+    #define HL_STRUCT_H_
 
 typedef struct new_biggest_square_s {
     int y_pos_start;
