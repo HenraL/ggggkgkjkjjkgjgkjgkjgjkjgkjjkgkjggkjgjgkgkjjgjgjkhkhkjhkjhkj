@@ -64,7 +64,6 @@ static int check_pattern(char **argv, err_struct_t *es)
     free(generated_map);
     return success;
 }
-// process_array(generated_map);
 
 int generate_map(char **argv, err_struct_t *es)
 {

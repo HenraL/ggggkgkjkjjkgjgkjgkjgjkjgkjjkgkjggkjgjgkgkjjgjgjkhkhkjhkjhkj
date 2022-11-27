@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: chmod 755 coding-style.sh && ./coding-style.sh . . && cat coding-style-reports.log
+      run: chmod 755 coding-style.sh && ./coding-style.sh . . 
+    - name: Displaying log results
+      run: cat coding-style-reports.log

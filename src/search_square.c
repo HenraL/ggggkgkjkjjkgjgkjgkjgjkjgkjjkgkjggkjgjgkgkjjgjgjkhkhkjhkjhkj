@@ -21,8 +21,7 @@ static void update_structure(new_biggest_square_t *nbs, int **arr, int x, int y)
 
 static int **find_smallest(int **arr, int y, int x, new_biggest_square_t *nbs)
 {
-    int top = arr[y - 1][x];
-    int left = arr[y][x - 1];
+    int top = arr[y - 1][x];int left = arr[y][x - 1];
     int top_left = arr[y - 1][x - 1];
     if (top_left == 0)
         return arr;
