@@ -22,6 +22,7 @@ SRC	=	$(CODE_ACCESS_FOLDER)sub_main.c	\
 		$(CODE_ACCESS_FOLDER)free_array.c	\
 		$(CODE_ACCESS_FOLDER)fill_struct.c	\
 		$(CODE_ACCESS_FOLDER)generate_map.c	\
+		$(CODE_ACCESS_FOLDER)process_array.c	\
 		$(CODE_ACCESS_FOLDER)search_square.c	\
 		$(CODE_ACCESS_FOLDER)skip_first_line.c	\
 		$(CODE_ACCESS_FOLDER)init_biggest_square.c	\

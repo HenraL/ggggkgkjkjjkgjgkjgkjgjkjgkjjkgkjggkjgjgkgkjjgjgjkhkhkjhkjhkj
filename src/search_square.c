@@ -6,6 +6,7 @@
 */
 
 #include <stddef.h>
+#include <stdbool.h>
 #include "my.h"
 #include "hl_struct.h"
 
@@ -52,6 +53,7 @@ new_biggest_square_t search_square(int **arr)
 {
     int y = 2;
     int x = 1;
+
     new_biggest_square_t nbs = init_new_bigest_square(0);
     for (; arr[y] != NULL; y++) {
         for (x = 1; arr[y][x] != (-1); x++) {

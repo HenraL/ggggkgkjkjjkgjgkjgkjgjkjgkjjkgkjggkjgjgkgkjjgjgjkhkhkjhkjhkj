@@ -31,6 +31,7 @@ int sub_main(int argc, char **argv);
 int file_close(int file_descriptor);
 int is_a_number(char *file_content);
 int is_signed_nb(char *file_content);
+int process_array(char *file_content);
 int get_filesize(const char *filepath);
 int is_legal(char *str, char *verif_str);
 int is_only_o_s(char *file_content, int skip_line_one);

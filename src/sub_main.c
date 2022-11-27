@@ -6,27 +6,13 @@
 */
 
 #include <stdbool.h>
+#include <stdlib.h>
 #include "my.h"
 #include "src.h"
 #include "constants.h"
 #include "hl_struct.h"
 #include "err_struct.h"
 #include "error_constants.h"
-
-
-static int process_array(char *file_content)
-{
-    int width = 0;
-    int height = 0;
-    int **arr;
-    new_biggest_square_t bst = init_new_bigest_square(0);
-    arr = hl_str_to_int_array(file_content, &width, &height);
-    bst = search_square(arr);
-    hl_put_new_struct_content(bst, "(sm) raw_struct_content");
-    disp_square(bst, file_content);
-    free_array(arr);
-    return success;
-}
 
 static int process_content(char *file_content, err_struct_t *es)
 {
@@ -88,5 +74,8 @@ int sub_main(int argc, char **argv)
     if (status != success) {
         return display_correct_err_msg(status, es);
     }
-    return check_first_line(file_content, es);
+
+    status = check_first_line(file_content, es);
+    free(file_content);
+    return status;
 }
