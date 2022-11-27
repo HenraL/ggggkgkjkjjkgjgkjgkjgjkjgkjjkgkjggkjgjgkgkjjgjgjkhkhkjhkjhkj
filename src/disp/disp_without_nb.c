@@ -12,7 +12,7 @@
 
 void disp_without_nb(char *file_content)
 {
-    int i = skip_first_line(file_content, true);
+    int i = skip_first_line(file_content, true) + 1;
     for (; file_content[i] != '\0'; i++) {
         my_putchar(file_content[i]);
     }

@@ -11,8 +11,8 @@
 
 static void disp_arr(new_biggest_square_t nbs, char chr, int x, int y)
 {
-    if (y >= nbs.y_pos_start && y <= nbs.y_pos_end) {
-        if (x >= nbs.x_pos_start && x <= nbs.x_pos_end) {
+    if (y >= nbs.y_pos_start && y <= nbs.y_pos_end && chr != '\n') {
+        if (x >= nbs.x_pos_start && x <= nbs.x_pos_end && chr != 'o') {
             my_putchar('x');
         } else {
             my_putchar(chr);
