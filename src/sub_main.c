@@ -80,6 +80,10 @@ int sub_main(int argc, char **argv)
         return status;
     }
 
+    if (argc == 3) {
+        return generate_map(argv, es);
+    }
+
     file_content = get_file_content(argv[1], &nb_read_bytes, &status);
     if (status != success) {
         return display_correct_err_msg(status, es);

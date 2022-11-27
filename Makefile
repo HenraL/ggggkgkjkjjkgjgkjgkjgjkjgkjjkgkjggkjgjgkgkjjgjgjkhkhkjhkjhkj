@@ -8,6 +8,7 @@
 CODE_ACCESS_FOLDER	=	src/
 
 IS_CODE_ACCESS_FOLDER	=	$(CODE_ACCESS_FOLDER)is/
+HL_CODE_ACCESS_FOLDER	=	$(CODE_ACCESS_FOLDER)hl/
 GET_CODE_ACCESS_FOLDER	=	$(CODE_ACCESS_FOLDER)get/
 HAS_CODE_ACCESS_FOLDER	=	$(CODE_ACCESS_FOLDER)has/
 FILE_CODE_ACCESS_FOLDER	=	$(CODE_ACCESS_FOLDER)file/
@@ -19,29 +20,24 @@ MAIN_FILE	=	main.c
 
 SRC	=	$(CODE_ACCESS_FOLDER)sub_main.c	\
 		$(CODE_ACCESS_FOLDER)free_array.c	\
-		$(CODE_ACCESS_FOLDER)hl_put_bool.c	\
 		$(CODE_ACCESS_FOLDER)fill_struct.c	\
+		$(CODE_ACCESS_FOLDER)generate_map.c	\
 		$(CODE_ACCESS_FOLDER)search_square.c	\
 		$(CODE_ACCESS_FOLDER)skip_first_line.c	\
-		$(CODE_ACCESS_FOLDER)hl_put_int_array.c	\
 		$(CODE_ACCESS_FOLDER)init_biggest_square.c	\
-		$(CODE_ACCESS_FOLDER)hl_str_to_int_array.c	\
-		$(CODE_ACCESS_FOLDER)hl_str_to_word_array.c	\
-		$(CODE_ACCESS_FOLDER)hl_put_struct_content.c	\
-		$(CODE_ACCESS_FOLDER)hl_put_new_struct_content.c	\
 		$(CODE_ACCESS_FOLDER)init_new_biggest_square.c	\
 
 
-FILE_SRC	=	$(FILE_CODE_ACCESS_FOLDER)file_close.c	\
-				$(FILE_CODE_ACCESS_FOLDER)file_open.c	\
+HL_SRC	=	$(HL_CODE_ACCESS_FOLDER)hl_atoi.c	\
+			$(HL_CODE_ACCESS_FOLDER)hl_put_bool.c	\
+			$(HL_CODE_ACCESS_FOLDER)hl_put_int_array.c	\
+			$(HL_CODE_ACCESS_FOLDER)hl_str_to_int_array.c	\
+			$(HL_CODE_ACCESS_FOLDER)hl_str_to_word_array.c	\
+			$(HL_CODE_ACCESS_FOLDER)hl_put_struct_content.c	\
+			$(HL_CODE_ACCESS_FOLDER)hl_put_new_struct_content.c	\
 
-GET_SRC	=	$(GET_CODE_ACCESS_FOLDER)get_filesize.c	\
-			$(GET_CODE_ACCESS_FOLDER)get_file_content.c	\
-
-HAS_SRC	=	$(HAS_CODE_ACCESS_FOLDER)has_illegal_chars.c	\
-			$(HAS_CODE_ACCESS_FOLDER)has_to_little_args.c	\
-
-IS_SRC	=	$(IS_CODE_ACCESS_FOLDER)is_a_float.c	\
+IS_SRC	=	$(IS_CODE_ACCESS_FOLDER)is_legal.c	\
+			$(IS_CODE_ACCESS_FOLDER)is_a_float.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_solvable.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_only_o_s.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_a_number.c	\
@@ -49,6 +45,15 @@ IS_SRC	=	$(IS_CODE_ACCESS_FOLDER)is_a_float.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_only_dots.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_correct_size.c	\
 			$(IS_CODE_ACCESS_FOLDER)is_signed_number.c	\
+
+GET_SRC	=	$(GET_CODE_ACCESS_FOLDER)get_filesize.c	\
+			$(GET_CODE_ACCESS_FOLDER)get_file_content.c	\
+
+HAS_SRC	=	$(HAS_CODE_ACCESS_FOLDER)has_illegal_chars.c	\
+			$(HAS_CODE_ACCESS_FOLDER)has_to_little_args.c	\
+
+FILE_SRC	=	$(FILE_CODE_ACCESS_FOLDER)file_close.c	\
+				$(FILE_CODE_ACCESS_FOLDER)file_open.c	\
 
 DISP_SRC	=	$(DISP_CODE_ACCESS_FOLDER)disp_is_o_s.c	\
 				$(DISP_CODE_ACCESS_FOLDER)disp_nb_err.c	\
@@ -62,6 +67,7 @@ DISP_SRC	=	$(DISP_CODE_ACCESS_FOLDER)disp_is_o_s.c	\
 				$(DISP_CODE_ACCESS_FOLDER)disp_illegal_chars.c	\
 				$(DISP_CODE_ACCESS_FOLDER)disp_to_little_args.c	\
 				$(DISP_CODE_ACCESS_FOLDER)disp_unsigned_nb_err.c	\
+				$(DISP_CODE_ACCESS_FOLDER)disp_allocation_failed.c	\
 				$(DISP_CODE_ACCESS_FOLDER)display_correct_err_msg.c	\
 
 SILENT	=	@
@@ -81,6 +87,7 @@ EPI_STANDARD	=	-std=c99
 PREV_STANDARD	=	-std=c90
 
 PROG_SRC	=	$(SRC)
+PROG_SRC	+=	$(HL_SRC)
 PROG_SRC	+=	$(IS_SRC)
 PROG_SRC	+=	$(HAS_SRC)
 PROG_SRC	+=	$(GET_SRC)

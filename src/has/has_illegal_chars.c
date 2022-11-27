@@ -6,13 +6,13 @@
 */
 
 #include <stdbool.h>
-#include "my.h"
 #include "src.h"
 
 static int is_char_illegal(char chr, char *authed_chars)
 {
     int i = 0;
     int legal_found = false;
+
     for (; authed_chars[i] != '\0'; i++) {
         if (chr == authed_chars[i]) {
             legal_found = true;

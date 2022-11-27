@@ -28,6 +28,7 @@ void fill_struct(err_struct_t *es)
     add_node(es, 6, illegal_chars, &disp_illegal_chars);
     add_node(es, 7, to_little_args, &disp_to_little_args);
     add_node(es, 8, signed_nb_err, &disp_unsigned_nb_err);
+    add_node(es, 9, allocation_failed, &disp_allocation_failed);
 
-    es[9].at_end = true;
+    es[10].at_end = true;
 }

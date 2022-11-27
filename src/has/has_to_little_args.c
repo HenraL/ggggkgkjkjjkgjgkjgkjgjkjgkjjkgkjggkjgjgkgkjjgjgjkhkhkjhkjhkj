@@ -12,7 +12,7 @@
 
 int has_to_little_args(int argc, err_struct_t *es)
 {
-    if (argc < 2) {
+    if (argc < 2 || argc > 3) {
         return display_correct_err_msg(to_little_args, es);
     }
     return success;
